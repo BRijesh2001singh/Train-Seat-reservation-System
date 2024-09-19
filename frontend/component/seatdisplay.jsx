@@ -61,7 +61,6 @@ const Home = () => {
     }, [booked]);
     return (
         <div className="top-container">
-            <h1>Train Seat Booking Menu</h1>
             <form onSubmit={bookSeats}>
                 <input type="number" placeholder="Required Seats" value={reqSeats}
                     onChange={(e) => {
@@ -91,7 +90,9 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+
         </div>
+
     )
 }
 

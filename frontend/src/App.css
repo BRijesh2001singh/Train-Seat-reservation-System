@@ -24,11 +24,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 2rem;
 
 }
 
-.top-container>h1 {
+.heading>h1 {
   font-family: monospace;
   font-size: 50px;
 
@@ -103,4 +102,48 @@ body {
   color: white;
   font-size: 30px;
   text-shadow: 1px 1px 1px black;
+}
+
+.note-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-container>span {
+  margin-right: .5rem;
+  color: white;
+  font-size: larger;
+}
+
+.note-container>img {
+  width: 3%;
+  height: 3%;
+  padding: 0;
+  background-color: blue;
+}
+
+.note-container>#img1 {
+  width: 3%;
+  height: 3%;
+  background-color: whitesmoke;
+}
+
+.note-container>#img2 {
+  width: 3%;
+  height: 3%;
+  background-color: grey;
+}
+
+.note-container>#img3 {
+  width: 3%;
+  height: 3%;
+  background-color: #7520ba;
+}
+
+.footer-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
 }
