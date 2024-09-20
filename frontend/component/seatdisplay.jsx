@@ -59,7 +59,14 @@ const Home = () => {
             setSeatMap(newSeats);
         }
     }, [booked]);
+    if (seatMap) {
+        return <div className="loading-comp">
+            <h1>Loading</h1>
+            <div className="loader"></div>
+        </div>
+    }
     return (
+
         <div className="top-container">
             <form onSubmit={bookSeats}>
                 <input type="number" placeholder="Required Seats" value={reqSeats}

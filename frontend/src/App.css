@@ -147,3 +147,34 @@ body {
   justify-content: end;
   align-items: center;
 }
+
+
+.loading-comp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.loader {
+  border: 1px solid black;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  border-radius: 50%;
+
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
