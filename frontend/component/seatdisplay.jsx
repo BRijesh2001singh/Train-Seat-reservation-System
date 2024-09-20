@@ -65,42 +65,44 @@ const Home = () => {
             <div className="loader"></div>
         </div>
     }
-    return (
+    else {
+        return (
 
-        <div className="top-container">
-            <form onSubmit={bookSeats}>
-                <input type="number" placeholder="Required Seats" value={reqSeats}
-                    onChange={(e) => {
-                        setReqSeats(e.target.value);
-                        setError("");
-                        setUpdate("");
-                    }}
-                />
-                <button type="submit">Book</button>
-            </form>
-            <span className="error-cnt">{error}</span>
-            <span className="update-cnt">{update}</span>
-            <div className="train">
-                {seatMap.map((row, rowInd) => (
-                    <div className="row-container" key={rowInd} style={{ display: "flex" }}>
-                        {row.map((seats, seatInd) => (
-                            <div className="seat-container" key={seatInd}
-                                style={{
-                                    margin: '5px', width: '30px', height: '30px',
-                                    backgroundColor: seats === 1 ? 'grey' : seats === 2 ? '#7520ba' : 'transparent'
-                                }}>
-                                <span style={{ color: seats === 0 ? "black" : "white" }}>{cnt++}</span>
-                                <img src={seat} alt="seat-icon" />
-                            </div>
-                        ))}
+            <div className="top-container">
+                <form onSubmit={bookSeats}>
+                    <input type="number" placeholder="Required Seats" value={reqSeats}
+                        onChange={(e) => {
+                            setReqSeats(e.target.value);
+                            setError("");
+                            setUpdate("");
+                        }}
+                    />
+                    <button type="submit">Book</button>
+                </form>
+                <span className="error-cnt">{error}</span>
+                <span className="update-cnt">{update}</span>
+                <div className="train">
+                    {seatMap.map((row, rowInd) => (
+                        <div className="row-container" key={rowInd} style={{ display: "flex" }}>
+                            {row.map((seats, seatInd) => (
+                                <div className="seat-container" key={seatInd}
+                                    style={{
+                                        margin: '5px', width: '30px', height: '30px',
+                                        backgroundColor: seats === 1 ? 'grey' : seats === 2 ? '#7520ba' : 'transparent'
+                                    }}>
+                                    <span style={{ color: seats === 0 ? "black" : "white" }}>{cnt++}</span>
+                                    <img src={seat} alt="seat-icon" />
+                                </div>
+                            ))}
 
-                    </div>
-                ))}
+                        </div>
+                    ))}
+                </div>
+
             </div>
 
-        </div>
-
-    )
+        )
+    }
 }
 
 export default Home;
