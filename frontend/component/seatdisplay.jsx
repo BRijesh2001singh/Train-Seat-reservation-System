@@ -8,6 +8,7 @@ const Home = () => {
     const [reqSeats, setReqSeats] = useState();
     const [error, setError] = useState();
     const [update, setUpdate] = useState();
+    const [loading, setLoading] = useState(true);
     let cnt = 1;
     //handle user input and book seats
     const bookSeats = async (e) => {
@@ -33,7 +34,7 @@ const Home = () => {
     const getSeatData = async () => {
         try {
             const res = await axios.get(`${apiUrl}/remainingseats`, { withCredentials: true });
-
+            setLoading(false);
             setSeatMap(res.data.seatmap);
 
         } catch (error) {
@@ -59,7 +60,7 @@ const Home = () => {
             setSeatMap(newSeats);
         }
     }, [booked]);
-    if (seatMap) {
+    if (loading) {
         return <div className="loading-comp">
             <h1>Loading</h1>
             <div className="loader"></div>
